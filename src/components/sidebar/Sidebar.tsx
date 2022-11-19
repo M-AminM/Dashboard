@@ -8,10 +8,10 @@ const Sidebar: React.FC = () => {
   const normalLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
   return (
-    <section className={`p-4 overflow-auto w-56  bg-white`}>
+    <section className="p-4 overflow-auto w-56  bg-white">
       <h1 className="font-bold pb-8">Shoppy</h1>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col h-screen overflow-auto">
         {links.map((data) => {
           return (
             <>

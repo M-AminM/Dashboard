@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Sidebar from "./components/sidebar/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import { BiMenu } from "react-icons/bi";
 import { SlBasket } from "react-icons/sl";
 import { BsChatLeft } from "react-icons/bs";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Main from "./components/Main/Main";
 import Orders from "./components/Orders/Orders";
+import Ecommerce from "./components/Ecommerce/Ecommerce";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -31,6 +32,8 @@ const App = () => {
 
           <Main>
             <Routes>
+              <Route path="/ecommerce" element={<Ecommerce />} />
+
               <Route path="/orders" element={<Orders />} />
             </Routes>
           </Main>
