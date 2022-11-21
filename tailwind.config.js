@@ -10,6 +10,18 @@ module.exports = {
       textGray700: "rgb(55 65 81)",
       gray: "rgb(107 114 128)",
       midBlue: "#03C9D7",
+      green: "rgb(74 222 128)",
+    },
+    screens: {
+      tablet: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      laptop: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: "1280px",
+      // => @media (min-width: 1280px) { ... }
+      md: { max: "991px" },
     },
   },
   plugins: [],
