@@ -24,16 +24,16 @@ const App = () => {
               <BiMenu size={20} color="#03C9D7" />
             </span>
             <div className="flex gap-6">
-              <SlBasket size={20} color="#03C9D7" />
-              <BsChatLeft size={20} color="#03C9D7" />
-              <IoMdNotificationsOutline size={20} color="#03C9D7" />
+              <SlBasket className="cursor-pointer" size={20} color="#03C9D7" />
+              <BsChatLeft className="cursor-pointer" size={20} color="#03C9D7" />
+              <IoMdNotificationsOutline className="cursor-pointer" size={20} color="#03C9D7" />
             </div>
           </div>
 
           <Main>
             <Routes>
+              <Route path="/" element={<Ecommerce />} />
               <Route path="/ecommerce" element={<Ecommerce />} />
-
               <Route path="/orders" element={<Orders />} />
             </Routes>
           </Main>

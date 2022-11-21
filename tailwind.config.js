@@ -6,9 +6,10 @@ module.exports = {
       transparent: "transparent",
       white: "#fff",
       black: "#23242a",
-      red: "rgba(0, 0, 0, 0.1)",
+      red: "#FF4A59",
       textGray700: "rgb(55 65 81)",
-      gray: "rgb(107 114 128)"
+      gray: "rgb(107 114 128)",
+      midBlue: "#03C9D7",
     },
   },
   plugins: [],

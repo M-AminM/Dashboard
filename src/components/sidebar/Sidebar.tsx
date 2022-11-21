@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { links } from "../../data/dummy";
 
 const Sidebar: React.FC = () => {
+  const location = useLocation();
+
+  const { pathname } = location;
+  console.log(pathname);
+
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2";
   const normalLink =
@@ -16,15 +21,22 @@ const Sidebar: React.FC = () => {
           return (
             <>
               <h2 className="text-sm font-medium text-gray">{data.title}</h2>
-              {data.links.map((link) => {
+              {data.links.map((link, index) => {
                 return (
                   <NavLink
                     to={`/${link.name}`}
                     style={({ isActive }) => ({
-                      backgroundColor: isActive ? "#03C9D7" : "",
+                      backgroundColor:
+                        isActive ||
+                        (pathname === "/" && link.name === "ecommerce")
+                          ? "#03C9D7"
+                          : "",
                     })}
                     className={({ isActive }) =>
-                      isActive ? activeLink : normalLink
+                      isActive ||
+                      (pathname === "/" && link.name === "ecommerce")
+                        ? activeLink
+                        : normalLink
                     }
                   >
                     <span>{link.icon}</span>
