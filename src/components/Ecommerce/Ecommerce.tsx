@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import { earningData, data, lineOptions } from "../../data/dummy";
 import { Line } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,6 +17,7 @@ import {
   Filler,
   Legend,
 } from "chart.js";
+import "../../index.css";
 
 const Ecommerce = () => {
   Chart.register(ArcElement);
@@ -31,9 +33,9 @@ const Ecommerce = () => {
   );
 
   return (
-    <section className="p-10 flex justify-center items-center flex-col">
-      <div className="flex gap-4 md:flex-col pb-8">
-        <div className="bg-white w-72 p-4 rounded">
+    <section className="pt-1 flex justify-center items-center flex-col px-5 md:block ">
+      <div className="flex gap-4 md:flex-col pb-8 flex-wrap">
+        <div className="bg-white w-72 p-4 rounded md:w-full">
           <div className="flex justify-between">
             <div className="flex flex-col gap-1">
               <h2 className="font-bold text-gray text-sm">Earnings</h2>
@@ -46,10 +48,10 @@ const Ecommerce = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-1 md:flex-col">
-          {earningData.map((data) => {
+        <div className="flex gap-1 md:flex-col flex-wrap">
+          {earningData.map((data, index) => {
             return (
-              <div className="bg-white rounded pl-4 py-4 pr-20 flex flex-col gap-4">
+              <div className="bg-white rounded pl-4 py-4 pr-20 flex flex-col gap-4" key={index}>
                 <div
                   className="rounded-full h-12 w-12 flex justify-center items-center"
                   style={{ background: data.iconBg }}
@@ -70,33 +72,95 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      <div className="bg-white p-4 rounded flex">
-        <div>
-          <h1 className="font-bold text-xl pb-4">Revenue Updates</h1>
-          <div className="flex flex-col gap-6">
-            <div>
-              <div className="flex gap-2">
-                <h2 className="text-xl font-bold">$93,438</h2>
-                <div className="bg-green rounded-full w-10 h-10 flex justify-center items-center">
-                  <span className="font-bold text-white">23%</span>
+      <div className="flex gap-2 flex-wrap md:flex-col mb-6">
+        <div className="bg-white p-4 rounded flex md:flex-col">
+          <div>
+            <h1 className="font-bold text-xl pb-4">Revenue Updates</h1>
+            <div className="flex flex-col gap-6">
+              <div>
+                <div className="flex gap-2">
+                  <h2 className="text-xl font-bold">$93,438</h2>
+                  <div className="bg-green rounded-full w-10 h-10 flex justify-center items-center">
+                    <span className="font-bold text-white">23%</span>
+                  </div>
                 </div>
+                <span className="text-gray">Budget</span>
               </div>
-              <span className="text-gray">Budget</span>
+              <div className="flex flex-col gap-1.5">
+                <h2 className="text-xl font-bold">$48,487</h2>
+                <span className="text-gray">Expense</span>
+              </div>
             </div>
-            <div className="flex flex-col gap-1.5">
-              <h2 className="text-xl font-bold">$48,487</h2>
-              <span className="text-gray">Expense</span>
+            <div className="py-10 md:hidden w-72">
+              <Line data={data} options={lineOptions} />
+            </div>
+            <div className="flex justify-center items-center">
+              <Button text="Download Report" />
             </div>
           </div>
-          <div className="py-10">
-            <Line data={data} options={lineOptions} />
+
+          <div
+            className="m-4"
+            style={{ borderLeft: "2px solid rgb(209 213 219)" }}
+          ></div>
+
+          <div>
+            <div className="flex justify-end gap-2">
+              <div className="flex gap-1">
+                <GoPrimitiveDot className="mt-1" />
+                <span>Expense</span>
+              </div>
+              <div className="flex gap-1">
+                <GoPrimitiveDot className="mt-1" color="rgb(74 222 128)" />
+                <span>Budget</span>
+              </div>
+            </div>
+            <div className="px-4 py-10">
+              <div className="p-4 flex justify-center rotate-180 gap-2 ">
+                <div className="bg-green w-10 h-72 md:w-8"><div className="bg-black w-10 h-20 md:w-8"></div></div>
+                <div className="bg-green w-10 h-72 md:w-8"><div className="bg-black w-10 h-20 md:w-8"></div></div>
+                <div className="bg-green w-10 h-40 md:w-8"><div className="bg-black w-10 h-10 md:w-8"></div></div>
+                <div className="bg-green w-10 h-60 md:w-8"><div className="bg-black w-10 h-28 md:w-8"></div></div>
+                <div className="bg-green w-10 h-80 md:w-8"><div className="bg-black w-10 h-32 md:w-8"></div></div>
+              </div>
+            </div>
           </div>
-          <Button text="Download Report" />
         </div>
 
-        <div className="m-4" style={{borderLeft: "2px solid rgb(209 213 219)"}}></div>
+        <div className="flex flex-col justify-between gap-2">
+          <div className="bg-midBlue rounded px-2.5">
+            <div
+              className=" text-white py-12 px-6 w-96 rounded md:w-full"
+              // style={{ width: "405px" }}
+            >
+              <div className="flex justify-between">
+                <h2 className="font-semibold">Earnings</h2>
+                <div className="flex flex-col">
+                  <span className="font-semibold">$63,448.78</span>
+                  <span>Monthly revenue</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 flex justify-center rotate-180 gap-2 ">
+              <div className="bg-white w-16 h-6 md:w-10"></div>
+              <div className="bg-white w-16 h-12 md:w-10"></div>
+              <div className="bg-white w-16 h-16 md:w-10"></div>
+              <div className="bg-white w-16 h-12 md:w-10"></div>
+              <div className="bg-white w-16 h-28 md:w-10"></div>
+            </div>
+          </div>
 
-        
+          <div className="bg-white rounded p-12 flex justify-between md:p-8">
+            <div className="flex justify-center items-center flex-col">
+              <span className="font-bold text-xl">$43,246</span>
+              <h2 className="text-gray">Yearly sales</h2>
+            </div>
+
+            <div className="circle flex justify-center items-center">
+              <div className="bg-white rounded-full w-10 h-10 absolute"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

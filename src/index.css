@@ -10,15 +10,47 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(0, 0, 0, 0.1);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
+.circle {
+  border-radius: 50px;
+  border-style: solid;
+  border-width: 50px;
+  border-bottom-color: violet;
+  border-left-color: #FF4A59;
+  border-right-color: #33373E;
+  border-top-color: rgb(154, 84, 154);
+  height: 0px;
+  width: 0px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media screen and (max-width: 720px) {
+  .ja::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 224px);
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: rgba(235, 235, 240, 0.5);
+    transition: 1s width ease;
+  }  
 }

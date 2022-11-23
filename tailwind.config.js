@@ -11,6 +11,7 @@ module.exports = {
       gray: "rgb(107 114 128)",
       midBlue: "#03C9D7",
       green: "rgb(74 222 128)",
+      midGray: "rgb(209 213 219)"
     },
     screens: {
       tablet: "640px",
@@ -21,7 +22,7 @@ module.exports = {
 
       desktop: "1280px",
       // => @media (min-width: 1280px) { ... }
-      md: { max: "991px" },
+      md: { max: "720px" },
     },
   },
   plugins: [],

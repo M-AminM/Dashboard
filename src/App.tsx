@@ -11,33 +11,47 @@ import Ecommerce from "./components/Ecommerce/Ecommerce";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const overFlowHidden = document.querySelector(
+    ".main-content"
+  ) as HTMLElement | null;
+  const asda = () => {
+    if (overFlowHidden != null) {
+      if (isOpen === false) {
+        overFlowHidden.style.overflow = "";
+      } else {
+        overFlowHidden.style.overflow = "hidden";
+      }
+    }
+  };
+  asda();
+  
   return (
-    <div className="fle">
-      {/* <Header isOpen={isOpen} setIsOpen={setIsOpen} /> */}
-      {/* <h1 className={``}>ads</h1> */}
-      <div className="flex">
-        <div>{isOpen && <Sidebar />}</div>
+    <div className="flex">
+      <div>{isOpen && <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />}</div>
 
-        <div className="w-full">
-          <div className="p-4 flex justify-between">
-            <span className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-              <BiMenu size={20} color="#03C9D7" />
-            </span>
-            <div className="flex gap-6">
-              <SlBasket className="cursor-pointer" size={20} color="#03C9D7" />
-              <BsChatLeft className="cursor-pointer" size={20} color="#03C9D7" />
-              <IoMdNotificationsOutline className="cursor-pointer" size={20} color="#03C9D7" />
-            </div>
+      <div className="main-content w-full h-screen overflow-auto ">
+        <div className="p-4 flex justify-between">
+          <span className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+            <BiMenu size={20} color="#03C9D7" />
+          </span>
+          <div className="flex gap-6">
+            <SlBasket className="cursor-pointer" size={20} color="#03C9D7" />
+            <BsChatLeft className="cursor-pointer" size={20} color="#03C9D7" />
+            <IoMdNotificationsOutline
+              className="cursor-pointer"
+              size={20}
+              color="#03C9D7"
+            />
           </div>
-
-          <Main>
-            <Routes>
-              <Route path="/" element={<Ecommerce />} />
-              <Route path="/ecommerce" element={<Ecommerce />} />
-              <Route path="/orders" element={<Orders />} />
-            </Routes>
-          </Main>
         </div>
+
+        <Main>
+          <Routes>
+            <Route path="/" element={<Ecommerce />} />
+            <Route path="/ecommerce" element={<Ecommerce />} />
+            <Route path="/orders" element={<Orders />} />
+          </Routes>
+        </Main>
       </div>
     </div>
   );
