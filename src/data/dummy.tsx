@@ -205,3 +205,511 @@ export const lineOptions: any = {
     enabled: false,
   },
 };
+
+
+export const ordersData = [
+  {
+    OrderID: 10248,
+    CustomerName: 'Vinet',
+
+    TotalAmount: 32.38,
+    OrderItems: 'Fresh Tomato',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      "/media/product1.jpg",
+  },
+  {
+    OrderID: 345653,
+    CustomerName: 'Carson Darrin',
+    TotalAmount: 56.34,
+    OrderItems: 'Butter Scotch',
+    Location: 'Delhi',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product5.jpg",
+  },
+  {
+    OrderID: 390457,
+    CustomerName: 'Fran Perez',
+    TotalAmount: 93.31,
+    OrderItems: 'Candy Gucci',
+    Location: 'New York',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product7.jpg",
+  },
+  {
+    OrderID: 893486,
+    CustomerName: 'Anika Viseer',
+    TotalAmount: 93.31,
+    OrderItems: 'Night Lamp',
+    Location: 'Germany',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 748975,
+    CustomerName: 'Miron Vitold',
+    TotalAmount: 23.99,
+    OrderItems: 'Healthcare Erbology',
+    Location: 'Spain',
+    Status: 'rejected',
+    StatusBg: 'red',
+    ProductImage:
+    "/media/product1.jpg",
+  },
+  {
+    OrderID: 94757,
+    CustomerName: 'Omar Darobe',
+    TotalAmount: 95.99,
+    OrderItems: 'Makeup Lancome Rouge',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product2.jpg",
+  },
+  {
+    OrderID: 944895,
+    CustomerName: 'Lulia albu',
+    TotalAmount: 17.99,
+    OrderItems: 'Skincare',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product3.jpg",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: 'Penjani',
+    TotalAmount: 59.99,
+    OrderItems: 'Headphone',
+    Location: 'USA',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: 'Jie Yan',
+    TotalAmount: 87.99,
+    OrderItems: 'Shoes',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
+  },
+
+  {
+    OrderID: 38489,
+    CustomerName: 'Miron',
+    TotalAmount: 87.99,
+    OrderItems: 'Ice Cream',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
+  },
+  {
+    OrderID: 10248,
+    CustomerName: 'Vinet',
+
+    TotalAmount: 32.38,
+    OrderItems: 'Fresh Tomato',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      "/media/product6.jpg",
+  },
+  {
+    OrderID: 345653,
+    CustomerName: 'Carson Darrin',
+    TotalAmount: 56.34,
+    OrderItems: 'Butter Scotch',
+    Location: 'Delhi',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product5.jpg",
+  },
+  {
+    OrderID: 390457,
+    CustomerName: 'Fran Perez',
+    TotalAmount: 93.31,
+    OrderItems: 'Candy Gucci',
+    Location: 'New York',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product7.jpg",
+  },
+  {
+    OrderID: 893486,
+    CustomerName: 'Anika Viseer',
+    TotalAmount: 93.31,
+    OrderItems: 'Night Lamp',
+    Location: 'Germany',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 748975,
+    CustomerName: 'Miron Vitold',
+    TotalAmount: 23.99,
+    OrderItems: 'Healthcare Erbology',
+    Location: 'Spain',
+    Status: 'rejected',
+    StatusBg: 'red',
+    ProductImage:
+      "/media/product1.jpg",
+  },
+  {
+    OrderID: 94757,
+    CustomerName: 'Omar Darobe',
+    TotalAmount: 95.99,
+    OrderItems: 'Makeup Lancome Rouge',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product2.jpg",
+  },
+  {
+    OrderID: 944895,
+    CustomerName: 'Lulia albu',
+    TotalAmount: 17.99,
+    OrderItems: 'Skincare',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product3.jpg",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: 'Penjani',
+    TotalAmount: 59.99,
+    OrderItems: 'Headphone',
+    Location: 'USA',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: 'Jie Yan',
+    TotalAmount: 87.99,
+    OrderItems: 'Shoes',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
+  },
+
+  {
+    OrderID: 38489,
+    CustomerName: 'Miron',
+    TotalAmount: 87.99,
+    OrderItems: 'Ice Cream',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
+  },
+  {
+    OrderID: 10248,
+    CustomerName: 'Vinet',
+
+    TotalAmount: 32.38,
+    OrderItems: 'Fresh Tomato',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      "/media/product6.jpg",
+  },
+  {
+    OrderID: 345653,
+    CustomerName: 'Carson Darrin',
+    TotalAmount: 56.34,
+    OrderItems: 'Butter Scotch',
+    Location: 'Delhi',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product5.jpg",
+  },
+  {
+    OrderID: 390457,
+    CustomerName: 'Fran Perez',
+    TotalAmount: 93.31,
+    OrderItems: 'Candy Gucci',
+    Location: 'New York',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product7.jpg",
+  },
+  {
+    OrderID: 893486,
+    CustomerName: 'Anika Viseer',
+    TotalAmount: 93.31,
+    OrderItems: 'Night Lamp',
+    Location: 'Germany',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 748975,
+    CustomerName: 'Miron Vitold',
+    TotalAmount: 23.99,
+    OrderItems: 'Healthcare Erbology',
+    Location: 'Spain',
+    Status: 'rejected',
+    StatusBg: 'red',
+    ProductImage:
+      "/media/product1.jpg",
+  },
+  {
+    OrderID: 94757,
+    CustomerName: 'Omar Darobe',
+    TotalAmount: 95.99,
+    OrderItems: 'Makeup Lancome Rouge',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product2.jpg",
+  },
+  {
+    OrderID: 944895,
+    CustomerName: 'Lulia albu',
+    TotalAmount: 17.99,
+    OrderItems: 'Skincare',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product3.jpg",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: 'Penjani',
+    TotalAmount: 59.99,
+    OrderItems: 'Headphone',
+    Location: 'USA',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 10248,
+    CustomerName: 'Vinet',
+
+    TotalAmount: 32.38,
+    OrderItems: 'Fresh Tomato',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      "/media/product6.jpg",
+  },
+  {
+    OrderID: 345653,
+    CustomerName: 'Carson Darrin',
+    TotalAmount: 56.34,
+    OrderItems: 'Butter Scotch',
+    Location: 'Delhi',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product5.jpg",
+  },
+  {
+    OrderID: 390457,
+    CustomerName: 'Fran Perez',
+    TotalAmount: 93.31,
+    OrderItems: 'Candy Gucci',
+    Location: 'New York',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product7.jpg",
+  },
+  {
+    OrderID: 893486,
+    CustomerName: 'Anika Viseer',
+    TotalAmount: 93.31,
+    OrderItems: 'Night Lamp',
+    Location: 'Germany',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 748975,
+    CustomerName: 'Miron Vitold',
+    TotalAmount: 23.99,
+    OrderItems: 'Healthcare Erbology',
+    Location: 'Spain',
+    Status: 'rejected',
+    StatusBg: 'red',
+    ProductImage:
+      "/media/product1.jpg",
+  },
+  {
+    OrderID: 94757,
+    CustomerName: 'Omar Darobe',
+    TotalAmount: 95.99,
+    OrderItems: 'Makeup Lancome Rouge',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product2.jpg",
+  },
+  {
+    OrderID: 944895,
+    CustomerName: 'Lulia albu',
+    TotalAmount: 17.99,
+    OrderItems: 'Skincare',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product3.jpg",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: 'Penjani',
+    TotalAmount: 59.99,
+    OrderItems: 'Headphone',
+    Location: 'USA',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 10248,
+    CustomerName: 'Vinet',
+
+    TotalAmount: 32.38,
+    OrderItems: 'Fresh Tomato',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      "/media/product6.jpg",
+  },
+  {
+    OrderID: 345653,
+    CustomerName: 'Carson Darrin',
+    TotalAmount: 56.34,
+    OrderItems: 'Butter Scotch',
+    Location: 'Delhi',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product5.jpg",
+  },
+  {
+    OrderID: 390457,
+    CustomerName: 'Fran Perez',
+    TotalAmount: 93.31,
+    OrderItems: 'Candy Gucci',
+    Location: 'New York',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product7.jpg",
+  },
+  {
+    OrderID: 893486,
+    CustomerName: 'Anika Viseer',
+    TotalAmount: 93.31,
+    OrderItems: 'Night Lamp',
+    Location: 'Germany',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+  {
+    OrderID: 748975,
+    CustomerName: 'Miron Vitold',
+    TotalAmount: 23.99,
+    OrderItems: 'Healthcare Erbology',
+    Location: 'Spain',
+    Status: 'rejected',
+    StatusBg: 'red',
+    ProductImage:
+      "/media/product1.jpg",
+  },
+  {
+    OrderID: 94757,
+    CustomerName: 'Omar Darobe',
+    TotalAmount: 95.99,
+    OrderItems: 'Makeup Lancome Rouge',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      "/media/product2.jpg",
+  },
+  {
+    OrderID: 944895,
+    CustomerName: 'Lulia albu',
+    TotalAmount: 17.99,
+    OrderItems: 'Skincare',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      "/media/product3.jpg",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: 'Penjani',
+    TotalAmount: 59.99,
+    OrderItems: 'Headphone',
+    Location: 'USA',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      "/media/product4.jpg",
+  },
+
+  {
+    OrderID: 38489,
+    CustomerName: 'Miron',
+    TotalAmount: 87.99,
+    OrderItems: 'Ice Cream',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
+  },
+
+];
