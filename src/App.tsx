@@ -8,12 +8,11 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import Main from "./components/Main/Main";
 import Orders from "./components/Orders/Orders";
 import Ecommerce from "./components/Ecommerce/Ecommerce";
+import "./index.css";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const overFlowHidden = document.querySelector(
-    ".main-content"
-  ) as HTMLElement | null;
+  const overFlowHidden = document.querySelector("body") as HTMLElement | null;
   const asda = () => {
     if (overFlowHidden != null) {
       if (isOpen === false) {
@@ -24,13 +23,13 @@ const App = () => {
     }
   };
   asda();
-  
+
   return (
     <div className="flex">
       <div>{isOpen && <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />}</div>
 
-      <div className="main-content w-full h-screen overflow-auto ">
-        <div className="p-4 flex justify-between">
+      <div className="main-content w-full">
+        <div className="p-4 flex justify-between ">
           <span className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
             <BiMenu size={20} color="#03C9D7" />
           </span>

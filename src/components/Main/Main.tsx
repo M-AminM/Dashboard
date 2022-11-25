@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 const Main: React.FC<Props> = ({ children }) => {
-  return <div>{children}</div>;
+  return <main>{children}</main>;
 };
 
 export default Main;
