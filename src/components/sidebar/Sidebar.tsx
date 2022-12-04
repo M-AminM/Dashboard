@@ -26,7 +26,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
         <div className="flex justify-between">
           <h1 className="font-bold pb-8">Shoppy</h1>
           <span
-            className="pt-1.5 hidden md:block"
+            className="pt-1.5 hidden md:block pr-4"
             onClick={() => setIsOpen(!isOpen)}
           >
             <MdOutlineCancel />

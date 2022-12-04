@@ -8,6 +8,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import Main from "./components/Main/Main";
 import Orders from "./components/Orders/Orders";
 import Ecommerce from "./components/Ecommerce/Ecommerce";
+import Employees from "./components/Employees/Employees";
 import "./index.css";
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
             <Route path="/" element={<Ecommerce />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/employees" element={<Employees />} />
           </Routes>
         </Main>
       </div>
