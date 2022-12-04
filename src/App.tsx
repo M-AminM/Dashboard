@@ -12,6 +12,7 @@ import Employees from "./components/Employees/Employees";
 import "./index.css";
 import Pie from "./components/Pie/Pie";
 import Bar from "./components/Bar/Bar";
+import Calendar from "./components/Calendar/Calendar";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -55,6 +56,7 @@ const App = () => {
             <Route path="/employees" element={<Employees />} />
             <Route path="/pie" element={<Pie height="75vh" />} />
             <Route path="/bar" element={<Bar isOpen={isOpen} />} />
+            <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </Main>
       </div>

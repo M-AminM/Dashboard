@@ -1,10 +1,11 @@
 import React from "react";
 import { GoPrimitiveDot } from "react-icons/go";
 import { BsCurrencyDollar } from "react-icons/bs";
-import Button from "../Button/Button";
+import Button1 from "../Button/Button";
 import { earningData, data, lineOptions } from "../../data/dummy";
 import { Line } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
+import { Button } from "@mui/material";
 
 import {
   Chart as ChartJS,
@@ -43,7 +44,14 @@ const Ecommerce = () => {
               <h2 className="font-bold text-gray text-sm">Earnings</h2>
               <span className="font-semibold text-xl">$63,448.78</span>
               <GoPrimitiveDot color="#03C9D7" />
-              <Button text="Download" />
+              <Button
+                style={{
+                  backgroundColor: "#03C9D7",
+                }}
+                variant="contained"
+              >
+                Download
+              </Button>
             </div>
             <div className="rounded-full bg-midBlue h-12 w-12 flex justify-center items-center">
               <BsCurrencyDollar color="#fff" size={20} />
@@ -100,7 +108,7 @@ const Ecommerce = () => {
               <Line data={data} options={lineOptions} />
             </div>
             <div className="flex justify-center items-center">
-              <Button text="Download Report" />
+              {/* <Button text="Download Report" /> */}
             </div>
           </div>
 

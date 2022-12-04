@@ -335,7 +335,7 @@ export default function EnhancedTable() {
 
     
   return (
-    <section className="p-10  md: p-2">
+    <section className="px-8 py-6  md:p-2">
       <Box sx={{ width: "100%" }}>
         <Paper sx={{ width: "100%", mb: 2 }}>
           <EnhancedTableToolbar numSelected={selected.length} />

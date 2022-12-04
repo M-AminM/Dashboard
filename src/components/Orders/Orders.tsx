@@ -28,7 +28,7 @@ const rows = [
 
 export default function BasicTable() {
   return (
-    <section className="p-10 md:p-3">
+    <section className="px-8 py-6 md:p-2">
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
