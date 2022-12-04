@@ -18,6 +18,8 @@ import {
   Legend,
 } from "chart.js";
 import "../../index.css";
+import Pie from "../Pie/Pie";
+import Bar from "../Bar/Bar";
 
 const Ecommerce = () => {
   Chart.register(ArcElement);
@@ -51,7 +53,10 @@ const Ecommerce = () => {
         <div className="flex gap-1 md:flex-col flex-wrap">
           {earningData.map((data, index) => {
             return (
-              <div className="bg-white rounded pl-4 py-4 pr-20 flex flex-col gap-4" key={index}>
+              <div
+                className="bg-white rounded pl-4 py-4 pr-20 flex flex-col gap-4"
+                key={index}
+              >
                 <div
                   className="rounded-full h-12 w-12 flex justify-center items-center"
                   style={{ background: data.iconBg }}
@@ -104,7 +109,7 @@ const Ecommerce = () => {
             style={{ borderLeft: "2px solid rgb(209 213 219)" }}
           ></div>
 
-          <div>
+          <div className="flex flex-col justify-between">
             <div className="flex justify-end gap-2">
               <div className="flex gap-1">
                 <GoPrimitiveDot className="mt-1" />
@@ -116,12 +121,23 @@ const Ecommerce = () => {
               </div>
             </div>
             <div className="px-4 py-10">
+              {/* <Bar isOpen={false} /> */}
               <div className="p-4 flex justify-center rotate-180 gap-2 ">
-                <div className="bg-green w-10 h-72 md:w-8"><div className="bg-black w-10 h-20 md:w-8"></div></div>
-                <div className="bg-green w-10 h-72 md:w-8"><div className="bg-black w-10 h-20 md:w-8"></div></div>
-                <div className="bg-green w-10 h-40 md:w-8"><div className="bg-black w-10 h-10 md:w-8"></div></div>
-                <div className="bg-green w-10 h-60 md:w-8"><div className="bg-black w-10 h-28 md:w-8"></div></div>
-                <div className="bg-green w-10 h-80 md:w-8"><div className="bg-black w-10 h-32 md:w-8"></div></div>
+                <div className="bg-green w-10 h-96 md:w-8">
+                  <div className="bg-black w-10 h-20 md:w-8"></div>
+                </div>
+                <div className="bg-green w-10 h-72 md:w-8">
+                  <div className="bg-black w-10 h-20 md:w-8"></div>
+                </div>
+                <div className="bg-green w-10 h-40 md:w-8">
+                  <div className="bg-black w-10 h-10 md:w-8"></div>
+                </div>
+                <div className="bg-green w-10 h-60 md:w-8">
+                  <div className="bg-black w-10 h-28 md:w-8"></div>
+                </div>
+                <div className="bg-green w-10 h-80 md:w-8">
+                  <div className="bg-black w-10 h-32 md:w-8"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -150,16 +166,7 @@ const Ecommerce = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded p-12 flex justify-between md:p-8">
-            <div className="flex justify-center items-center flex-col">
-              <span className="font-bold text-xl">$43,246</span>
-              <h2 className="text-gray">Yearly sales</h2>
-            </div>
-
-            <div className="circle flex justify-center items-center">
-              <div className="bg-white rounded-full w-10 h-10 absolute"></div>
-            </div>
-          </div>
+          <Pie height="40vh" />
         </div>
       </div>
     </section>
