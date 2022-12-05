@@ -13,6 +13,7 @@ import "./index.css";
 import Pie from "./components/Pie/Pie";
 import Bar from "./components/Bar/Bar";
 import Calendar from "./components/Calendar/Calendar";
+import Line from "./components/Line/Line";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="/pie" element={<Pie height="75vh" />} />
             <Route path="/bar" element={<Bar isOpen={isOpen} />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/area" element={<Line isOpen={isOpen}/>} />
           </Routes>
         </Main>
       </div>
