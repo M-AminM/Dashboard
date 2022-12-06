@@ -11,7 +11,8 @@ module.exports = {
       gray: "rgb(107 114 128)",
       midBlue: "#03C9D7",
       green: "rgb(74 222 128)",
-      midGray: "rgb(209 213 219)"
+      midGray: "rgb(209 213 219)",
+      mainBg: "rgba(0, 0, 0, 0.1)"
     },
     screens: {
       tablet: "640px",

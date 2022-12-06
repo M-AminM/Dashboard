@@ -51,8 +51,8 @@ const App = () => {
 
         <Main>
           <Routes>
-            <Route path="/" element={<Ecommerce />} />
-            <Route path="/ecommerce" element={<Ecommerce />} />
+            <Route path="/" element={<Ecommerce isOpen={isOpen} />} />
+            <Route path="/ecommerce" element={<Ecommerce isOpen={isOpen} />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/employees" element={<Employees />} />
             <Route path="/pie" element={<Pie height="75vh" />} />

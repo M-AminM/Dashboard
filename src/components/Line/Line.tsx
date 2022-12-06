@@ -11,7 +11,7 @@ const Bar: React.FC<Props> = ({ isOpen }) => {
   return (
     <section style={{ width: isOpen ? dynamicWidth : "" }}>
       <Box>
-        <Box height="75vh" >
+        <Box height="35vh">
           <AreaBump />
         </Box>
       </Box>

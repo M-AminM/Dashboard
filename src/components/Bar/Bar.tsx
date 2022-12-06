@@ -7,11 +7,11 @@ interface Props {
 }
 
 const Bar: React.FC<Props> = ({ isOpen }) => {
-  const dynamicWidth: string = "calc(100% - " + "60px" + ")";
+  const dynamicWidth: string = "calc(100% - " + "10px" + ")";
   return (
-    <section style={{ width: isOpen ? dynamicWidth : "" }}>
+    <section style={{ width: isOpen ? dynamicWidth : "" }} >
       <Box>
-        <Box height="75vh">
+        <Box height="35vh">
           <BarChart />
         </Box>
       </Box>
