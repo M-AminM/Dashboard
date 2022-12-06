@@ -13,23 +13,30 @@ import Bar from "../Bar/Bar";
 
 interface Props {
   isOpen: boolean;
+  theme: boolean;
 }
 
-const Ecommerce: React.FC<Props> = ({ isOpen }) => {
+const Ecommerce: React.FC<Props> = ({ isOpen, theme }) => {
   return (
-    <section className="px-8 py-6">
-      <div className="flex items-start gap-4 md:flex-col">
-        <div className="bg-white p-2 rounded flex justify-between mb-6 w-full ">
+    <section className={`px-8 pt-2 pb-8 ${theme ? "dark" : ""}`}>
+      <div className="flex items-start gap-2 md:flex-col">
+        <div className="bg-white p-2 rounded flex justify-between mb-4 w-full dark:bg-darkMode">
           <div>
-            <h2 className="font-bold">Earnings</h2>
-            <span>$63,448.78</span>
-            <GoPrimitiveDot color="#03C9D7" className="mb-3" />
-            <Button style={{ backgroundColor: "#03C9D7" }} variant="contained">
+            <h2 className="font-bold dark:text-white">Earnings</h2>
+            <span className="dark:text-white">$63,448.78</span>
+            <GoPrimitiveDot
+              color={!theme ? "#03C9D7" : "#FF4A59"}
+              className="mb-3"
+            />
+            <Button
+              style={{ backgroundColor: !theme ? "#03C9D7" : "#FF4A59" }}
+              variant="contained"
+            >
               Download
             </Button>
           </div>
           <div className="flex justify-center items-center">
-            <div className="bg-midBlue w-10 h-10 rounded-full flex justify-center items-center">
+            <div className="bg-midBlue w-10 h-10 rounded-full flex justify-center items-center dark:bg-red">
               <BsCurrencyDollar color="#fff" />
             </div>
           </div>
@@ -37,7 +44,7 @@ const Ecommerce: React.FC<Props> = ({ isOpen }) => {
         {earningData.map((data, index) => {
           return (
             <div
-              className="bg-white rounded flex flex-col p-4 w-full "
+              className="bg-white rounded flex flex-col p-4 w-full dark:bg-darkMode"
               key={index}
             >
               <div
@@ -49,7 +56,9 @@ const Ecommerce: React.FC<Props> = ({ isOpen }) => {
 
               <div className="flex flex-col">
                 <div className="flex gap-2">
-                  <span className="font-bold">{data.amount}</span>
+                  <span className="font-bold dark:text-white">
+                    {data.amount}
+                  </span>
                   <span className="text-red">{data.percentage}</span>
                 </div>
                 <span className="text-gray">{data.title}</span>
@@ -58,21 +67,23 @@ const Ecommerce: React.FC<Props> = ({ isOpen }) => {
           );
         })}
       </div>
-      <div className="flex gap-6 md:flex-col mb-4">
-        <div className="bg-white rounded w-full">
+      <div className="flex gap-3 md:flex-col mb-4">
+        <div className="bg-white rounded w-full dark:bg-darkMode">
           <Line isOpen={false} />
         </div>
-        <div className="bg-white rounded w-full">
-          <h2 className="font-semibold p-4">Recent Transactions</h2>
+        <div className="bg-white rounded w-full dark:bg-darkMode">
+          <h2 className="font-semibold p-4 dark:text-white">
+            Recent Transactions
+          </h2>
 
           <div className=" border-y-4 border-mainBg">
-            <div className="flex justify-between  px-4 py-2">
+            <div className="flex justify-between px-4 py-2">
               <div className="flex flex-col ">
                 <span className="text-midBlue">01e4dsa</span>
-                <span>johndoe</span>
+                <span className="dark:text-white">johndoe</span>
               </div>
               <div className="flex justify-center items-center">
-                <span>2021-09-01</span>
+                <span className="dark:text-white">2021-09-01</span>
               </div>
               <div className="bg-midBlue px-2 py-1 rounded flex justidy-center items-center text-white">
                 <p>$43.95</p>
@@ -84,13 +95,13 @@ const Ecommerce: React.FC<Props> = ({ isOpen }) => {
             <div className="flex justify-between  px-4 py-2">
               <div className="flex flex-col ">
                 <span className="text-midBlue">01e4dsa</span>
-                <span>johndoe</span>
+                <span className="dark:text-white">johndoe</span>
               </div>
               <div className="flex justify-center items-center">
-                <span>2021-09-01</span>
+                <span className="dark:text-white">2021-09-01</span>
               </div>
               <div className="bg-midBlue px-2 py-1 rounded flex justidy-center items-center text-white">
-                <p>$43.95</p>
+                <p className="dark:text-white">$43.95</p>
               </div>
             </div>
           </div>
@@ -98,26 +109,28 @@ const Ecommerce: React.FC<Props> = ({ isOpen }) => {
             <div className="flex justify-between  px-4 py-2">
               <div className="flex flex-col ">
                 <span className="text-midBlue">01e4dsa</span>
-                <span>johndoe</span>
+                <span className="dark:text-white">johndoe</span>
               </div>
               <div className="flex justify-center items-center">
-                <span>2021-09-01</span>
+                <span className="dark:text-white">2021-09-01</span>
               </div>
               <div className="bg-midBlue px-2 py-1 rounded flex justidy-center items-center text-white">
-                <p>$43.95</p>
+                <p className="dark:text-white">$43.95</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex gap-6 w-full md:flex-col">
-        <div className="bg-white p-2 ">
-          <h2 className="font-semibold text-lg pb-4">Revenue Updates</h2>
+      <div className="flex gap-2 w-full md:flex-col">
+        <div className="bg-white p-2 rounded dark:bg-darkMode">
+          <h2 className="font-semibold pb-4 dark:text-white">
+            Revenue Updates
+          </h2>
           <div className="flex flex-col gap-6">
             <div>
-              <div className="flex gap-2">
-                <h2 className="text-lg font-semibold">$93,438</h2>
+              <div className="flex justify-between">
+                <h2 className="dark:text-white font-semibold">$93,438</h2>
                 <div className="bg-green rounded-full w-10 h-10 flex justify-center items-center">
                   <span className="font-semibold text-sm text-white">23%</span>
                 </div>
@@ -125,13 +138,27 @@ const Ecommerce: React.FC<Props> = ({ isOpen }) => {
               <span className="text-gray">Budget</span>
             </div>
             <div className="flex flex-col gap-1.5">
-              <h2 className="text-lg font-semibold">$48,487</h2>
+              <h2 className="dark:text-white font-semibold">$48,487</h2>
               <span className="text-gray">Expense</span>
             </div>
+
+            <Button
+              style={{
+                backgroundColor: !theme ? "#03C9D7" : "#FF4A59",
+                fontSize: "12px",
+                fontWeight: "600",
+              }}
+              variant="contained"
+            >
+              Download Report
+            </Button>
           </div>
         </div>
+        <div className="bg-white p-2 w-1/2 md:w-full rounded dark:bg-darkMode ">
+          <Pie height="33vh" />
+        </div>
 
-        <div className="bg-white rounded px-2.5 w-1/2 md:w-full">
+        <div className="bg-white rounded px-2 w-1/2 md:w-full dark:bg-darkMode">
           <Bar isOpen={isOpen} />
           {/* <div
             className=" text-white py-12 px-6 w-96 rounded md:w-full"
@@ -152,9 +179,6 @@ const Ecommerce: React.FC<Props> = ({ isOpen }) => {
             <div className="bg-white w-16 h-12 md:w-10"></div>
             <div className="bg-white w-16 h-28 md:w-10"></div>
           </div> */}
-        </div>
-        <div className="bg-white p-4 w-1/2 md:w-full">
-          <Pie height="40vh" />
         </div>
       </div>
     </section>

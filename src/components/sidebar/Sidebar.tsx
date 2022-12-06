@@ -7,9 +7,10 @@ import "../../index.css";
 interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  theme: boolean;
 }
 
-const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
+const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
   const location = useLocation();
   const { pathname } = location;
 
@@ -22,9 +23,9 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
     <section className="overflow-auto md:absolute w-full " style={{zIndex: 20}}>
       <div className="ja" onClick={() => setIsOpen(!isOpen)}></div>
 
-      <div className="py-4 pl-4 w-56 bg-white">
+      <div className="py-4 pl-4 w-56 bg-white dark:bg-darkMode1">
         <div className="flex justify-between">
-          <h1 className="font-bold pb-8">Shoppy</h1>
+          <h1 className="font-bold pb-8 dark:text-white">Shoppy</h1>
           <span
             className="pt-1.5 hidden md:block pr-4"
             onClick={() => setIsOpen(!isOpen)}
@@ -36,7 +37,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
           {links.map((data, index) => {
             return (
               <div key={index}>
-                <h2 className="text-sm font-medium text-gray">{data.title}</h2>
+                <h2 className="text-sm font-medium text-gray ">{data.title}</h2>
                 {data.links.map((link, index) => {
                   return (
                     <NavLink
@@ -46,7 +47,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
                         backgroundColor:
                           isActive ||
                           (pathname === "/" && link.name === "ecommerce")
-                            ? "#03C9D7"
+                            ? !theme ? "#03C9D7" : "#FF4A59"
                             : "",
                       })}
                       className={({ isActive }) =>
@@ -56,10 +57,10 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
                           : normalLink
                       }
                     >
-                      <span className={`${index === 7 ? "mb-10" : ""}`}>
+                      <span className={`${index === 7 ? "mb-10" : ""} dark:text-white`}>
                         {link.icon}
                       </span>
-                      {link.name}
+                      <span className="dark:text-white">{link.name}</span>
                     </NavLink>
                   );
                 })}

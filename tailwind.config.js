@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     colors: {
       transparent: "transparent",
@@ -12,7 +13,9 @@ module.exports = {
       midBlue: "#03C9D7",
       green: "rgb(74 222 128)",
       midGray: "rgb(209 213 219)",
-      mainBg: "rgba(0, 0, 0, 0.1)"
+      mainBg: "rgba(0, 0, 0, 0.1)",
+      darkMode: "#383b53",
+      darkMode1: "#1F2235",
     },
     screens: {
       tablet: "640px",

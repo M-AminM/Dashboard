@@ -26,20 +26,32 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function BasicTable() {
+const BasicTable: React.FC = () => {
   return (
-    <section className="px-8 py-6 md:p-2">
-      <TableContainer component={Paper}>
+    <section className="px-8 pt-2 pb-8 md:p-2 ">
+      <TableContainer className="dark:bg-darkMode" component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell sx={{fontWeight: "bold"}}>Image</TableCell>
-              <TableCell sx={{fontWeight: "bold"}} align="right">Item</TableCell>
-              <TableCell sx={{fontWeight: "bold"}} align="right">Customer Name</TableCell>
-              <TableCell sx={{fontWeight: "bold"}} align="right">Total Amount</TableCell>
-              <TableCell sx={{fontWeight: "bold"}} align="right">Status</TableCell>
-              <TableCell sx={{fontWeight: "bold"}} align="right">Order ID</TableCell>
-              <TableCell sx={{fontWeight: "bold"}} align="right">Location</TableCell>
+              <TableCell className="dark:text-white" sx={{ fontWeight: "bold" }}>Image</TableCell>
+              <TableCell className="dark:text-white" sx={{ fontWeight: "bold" }} align="right">
+                Item
+              </TableCell>
+              <TableCell className="dark:text-white" sx={{ fontWeight: "bold" }} align="right">
+                Customer Name
+              </TableCell>
+              <TableCell className="dark:text-white" sx={{ fontWeight: "bold" }} align="right">
+                Total Amount
+              </TableCell>
+              <TableCell className="dark:text-white" sx={{ fontWeight: "bold" }} align="right">
+                Status
+              </TableCell>
+              <TableCell className="dark:text-white" sx={{ fontWeight: "bold" }} align="right">
+                Order ID
+              </TableCell>
+              <TableCell className="dark:text-white" sx={{ fontWeight: "bold" }} align="right">
+                Location
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -55,12 +67,12 @@ export default function BasicTable() {
                     alt={row.OrderItems}
                   />
                 </TableCell>
-                <TableCell align="right">{row.OrderItems}</TableCell>
-                <TableCell align="right">{row.CustomerName}</TableCell>
-                <TableCell align="right">{row.TotalAmount}</TableCell>
-                <TableCell align="right">{row.Status}</TableCell>
-                <TableCell align="right">{row.OrderID}</TableCell>
-                <TableCell align="right">{row.Location}</TableCell>
+                <TableCell className="dark:text-white" align="right">{row.OrderItems}</TableCell>
+                <TableCell className="dark:text-white" align="right">{row.CustomerName}</TableCell>
+                <TableCell className="dark:text-white" align="right">{row.TotalAmount}</TableCell>
+                <TableCell className="dark:text-white" align="right">{row.Status}</TableCell>
+                <TableCell className="dark:text-white" align="right">{row.OrderID}</TableCell>
+                <TableCell className="dark:text-white" align="right">{row.Location}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -68,7 +80,9 @@ export default function BasicTable() {
       </TableContainer>
     </section>
   );
-}
+};
+
+export default BasicTable;
 
 // import React from "react";
 // import { ordersData } from "../../data/dummy";

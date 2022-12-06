@@ -14,6 +14,8 @@ import Pie from "./components/Pie/Pie";
 import Bar from "./components/Bar/Bar";
 import Calendar from "./components/Calendar/Calendar";
 import Line from "./components/Line/Line";
+import MdLightMode from "react-icons/md";
+import MdDarkMode from "react-icons/md";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -29,14 +31,15 @@ const App = () => {
   };
   asda();
 
+  const [theme, setTheme] = useState<boolean>(false);
   return (
-    <div className="flex">
-      <div>{isOpen && <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />}</div>
+    <div className={`flex ${theme ? "dark bg-darkMode1" : ""}`}>
+      <div>{isOpen && <Sidebar theme={theme} isOpen={isOpen} setIsOpen={setIsOpen} />}</div>
 
       <div className="main-content w-full">
         <div className="p-4 flex justify-between ">
           <span className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-            <BiMenu size={20} color="#03C9D7" />
+            <BiMenu size={20} color="#383b53" />
           </span>
           <div className="flex gap-6">
             <SlBasket className="cursor-pointer" size={20} color="#03C9D7" />
@@ -46,19 +49,28 @@ const App = () => {
               size={20}
               color="#03C9D7"
             />
+            <button onClick={() => setTheme(!theme)} className="text-black dark:text-white">
+              {theme ? "Light" : "Dark"}
+            </button>
           </div>
         </div>
 
         <Main>
           <Routes>
-            <Route path="/" element={<Ecommerce isOpen={isOpen} />} />
-            <Route path="/ecommerce" element={<Ecommerce isOpen={isOpen} />} />
+            <Route
+              path="/"
+              element={<Ecommerce theme={theme} isOpen={isOpen} />}
+            />
+            <Route
+              path="/ecommerce"
+              element={<Ecommerce theme={theme} isOpen={isOpen} />}
+            />
             <Route path="/orders" element={<Orders />} />
             <Route path="/employees" element={<Employees />} />
             <Route path="/pie" element={<Pie height="75vh" />} />
             <Route path="/bar" element={<Bar isOpen={isOpen} />} />
             <Route path="/calendar" element={<Calendar />} />
-            <Route path="/area" element={<Line isOpen={isOpen}/>} />
+            <Route path="/area" element={<Line isOpen={isOpen} />} />
           </Routes>
         </Main>
       </div>
