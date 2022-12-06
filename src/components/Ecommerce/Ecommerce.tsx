@@ -10,6 +10,7 @@ import Line from "../../components/Line/Line";
 import "../../index.css";
 import Pie from "../Pie/Pie";
 import Bar from "../Bar/Bar";
+import Bump from "../Bump/Bump";
 
 interface Props {
   isOpen: boolean;
@@ -159,7 +160,7 @@ const Ecommerce: React.FC<Props> = ({ isOpen, theme }) => {
         </div>
 
         <div className="bg-white rounded px-2 w-1/2 md:w-full dark:bg-darkMode">
-          <Bar isOpen={isOpen} />
+          <Bump isOpen={isOpen} />
           {/* <div
             className=" text-white py-12 px-6 w-96 rounded md:w-full"
             // style={{ width: "405px" }}

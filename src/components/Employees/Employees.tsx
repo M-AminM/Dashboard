@@ -194,6 +194,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
               direction={orderBy === headCell.id ? order : "asc"}
               onClick={createSortHandler(headCell.id)}
               sx={{fontWeight: "600"}}
+              className="dark:text-white"
             >
               {headCell.label}
               {orderBy === headCell.id ? (
@@ -245,6 +246,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
           variant="h6"
           id="tableTitle"
           component="div"
+          className="dark:text-white"
         >
           Employees
         </Typography>
@@ -337,7 +339,7 @@ export default function EnhancedTable() {
   return (
     <section className="px-8 pt-2 pb-8  md:p-2">
       <Box sx={{ width: "100%" }}>
-        <Paper sx={{ width: "100%", mb: 2 }}>
+        <Paper sx={{ width: "100%", mb: 2 }} className="dark:bg-darkMode">
           <EnhancedTableToolbar numSelected={selected.length} />
           <TableContainer>
             <Table
@@ -387,14 +389,14 @@ export default function EnhancedTable() {
                           id={labelId}
                           scope="row"
                           padding="none"
-                          
+                          className="dark:text-white"
                         >
                           {row.name}
                         </TableCell>
-                        <TableCell align="right">{row.desigration}</TableCell>
-                        <TableCell align="right">{row.country}</TableCell>
-                        <TableCell align="right">{row.hireDate}</TableCell>
-                        <TableCell align="right">{row.employeeId}</TableCell>
+                        <TableCell className="dark:text-white" align="right">{row.desigration}</TableCell>
+                        <TableCell className="dark:text-white" align="right">{row.country}</TableCell>
+                        <TableCell className="dark:text-white" align="right">{row.hireDate}</TableCell>
+                        <TableCell className="dark:text-white" align="right">{row.employeeId}</TableCell>
                       </TableRow>
                     );
                   })}
@@ -418,11 +420,13 @@ export default function EnhancedTable() {
             page={page}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
+            className="dark:text-white"
           />
         </Paper>
         <FormControlLabel
           control={<Switch checked={dense} onChange={handleChangeDense} />}
           label="Dense padding"
+          className="dark:text-white"
         />
       </Box>
     </section>

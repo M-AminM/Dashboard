@@ -23,7 +23,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
     <section className="overflow-auto md:absolute w-full " style={{zIndex: 20}}>
       <div className="ja" onClick={() => setIsOpen(!isOpen)}></div>
 
-      <div className="py-4 pl-4 w-56 bg-white dark:bg-darkMode1">
+      <div className="py-4 pl-4 w-56 bg-white dark:bg-darkMode">
         <div className="flex justify-between">
           <h1 className="font-bold pb-8 dark:text-white">Shoppy</h1>
           <span

@@ -39,10 +39,10 @@ const Calendar = () => {
     <section className="px-8 py-6 md:p-2">
       <div className="flex gap-6 md:flex-col">
         <div className="p-4 rounded-lg w-1/4 md:w-full md:p-0">
-          <h2 className="text-base font-semibold pb-2 pl-0.5">Events</h2>
+          <h2 className="text-base font-semibold pb-2 pl-0.5 dark:text-white">Events</h2>
           <div>
             {currentEvents.map((event: any) => (
-              <div className="rounded-lg bg-midBlue mb-2 p-2" key={event.id}>
+              <div className="rounded-lg bg-midBlue mb-2 p-2 dark:bg-red dark:text-white font-semibold" key={event.id}>
                 <div className="flex gap-2 flex-col">
                   <h3 className="text-sm">{event.title}</h3>
                   <p className="text-sm">
@@ -57,8 +57,9 @@ const Calendar = () => {
             ))}
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full dark:text-white">
           <FullCalendar
+          
             height="75vh"
             plugins={[
               dayGridPlugin,

@@ -32,9 +32,24 @@ const App = () => {
   asda();
 
   const [theme, setTheme] = useState<boolean>(false);
+
+  const changeTheme = () => {
+    if (overFlowHidden != null) {
+      if (theme) {
+        overFlowHidden.style.background = "#1F2235";
+      } else {
+        overFlowHidden.style.background = "rgba(0, 0, 0, 0.1)";
+      }
+    }
+  };
+  changeTheme();
   return (
-    <div className={`flex ${theme ? "dark bg-darkMode1" : ""}`}>
-      <div>{isOpen && <Sidebar theme={theme} isOpen={isOpen} setIsOpen={setIsOpen} />}</div>
+    <div className={`flex ${theme ? "dark" : ""}`}>
+      <div>
+        {isOpen && (
+          <Sidebar theme={theme} isOpen={isOpen} setIsOpen={setIsOpen} />
+        )}
+      </div>
 
       <div className="main-content w-full">
         <div className="p-4 flex justify-between ">
@@ -49,7 +64,10 @@ const App = () => {
               size={20}
               color="#03C9D7"
             />
-            <button onClick={() => setTheme(!theme)} className="text-black dark:text-white">
+            <button
+              onClick={() => setTheme(!theme)}
+              className="text-black dark:text-white"
+            >
               {theme ? "Light" : "Dark"}
             </button>
           </div>
