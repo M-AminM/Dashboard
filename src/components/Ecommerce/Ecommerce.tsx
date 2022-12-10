@@ -140,7 +140,7 @@ const Ecommerce: React.FC<Props> = ({ isOpen, theme }) => {
         <div className="bg-white col-span-2 dark:bg-darkMode">
           <Pie height="35vh" />
         </div>
-        <div className="bg-white p-4 col-span-2 dark:bg-darkMode">
+        <div className="bg-white p-4 col-span-2 dark:bg-darkMode ">
           <Bump isOpen={false} />
         </div>
         <div className="bg-white p-4 dark:bg-darkMode">

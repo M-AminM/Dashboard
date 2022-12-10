@@ -14,8 +14,8 @@ import Pie from "./components/Pie/Pie";
 import Bar from "./components/Bar/Bar";
 import Calendar from "./components/Calendar/Calendar";
 import Line from "./components/Line/Line";
-import MdLightMode from "react-icons/md";
-import MdDarkMode from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
+import { MdOutlineDarkMode } from "react-icons/md";
 import Bump from "./components/Bump/Bump";
 
 const App = () => {
@@ -55,21 +55,21 @@ const App = () => {
       <div className="main-content w-full">
         <div className="p-4 flex justify-between ">
           <span className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-            <BiMenu size={20} color="#383b53" />
+            <BiMenu size={20} color={theme ? "#FF4A59" : "#03C9D7"} />
           </span>
           <div className="flex gap-6">
-            <SlBasket className="cursor-pointer" size={20} color="#03C9D7" />
-            <BsChatLeft className="cursor-pointer" size={20} color="#03C9D7" />
+            <SlBasket className="cursor-pointer" size={20} color={theme ? "#FF4A59" : "#03C9D7"} />
+            <BsChatLeft className="cursor-pointer" size={20} color={theme ? "#FF4A59" : "#03C9D7"} />
             <IoMdNotificationsOutline
               className="cursor-pointer"
               size={20}
-              color="#03C9D7"
+              color={theme ? "#FF4A59" : "#03C9D7"}
             />
             <button
               onClick={() => setTheme(!theme)}
               className="text-black dark:text-white"
             >
-              {theme ? "Light" : "Dark"}
+              {theme ? <MdLightMode size={20} color="#FF4A59" /> : <MdOutlineDarkMode size={20} color="#03C9D7" />}
             </button>
           </div>
         </div>
@@ -91,7 +91,6 @@ const App = () => {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/area" element={<Line isOpen={isOpen} />} />
             <Route path="/line" element={<Bump isOpen={isOpen} />} />
-
           </Routes>
         </Main>
       </div>

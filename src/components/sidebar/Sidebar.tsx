@@ -4,6 +4,7 @@ import { links } from "../../data/dummy";
 import { MdOutlineCancel } from "react-icons/md";
 import "../../index.css";
 
+
 interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
