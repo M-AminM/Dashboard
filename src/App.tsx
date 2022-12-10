@@ -17,6 +17,8 @@ import Line from "./components/Line/Line";
 import { MdLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 import Bump from "./components/Bump/Bump";
+import Editor from "./components/Editor/Editor";
+import Customers from "./components/Customers/Customers";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -58,8 +60,16 @@ const App = () => {
             <BiMenu size={20} color={theme ? "#FF4A59" : "#03C9D7"} />
           </span>
           <div className="flex gap-6">
-            <SlBasket className="cursor-pointer" size={20} color={theme ? "#FF4A59" : "#03C9D7"} />
-            <BsChatLeft className="cursor-pointer" size={20} color={theme ? "#FF4A59" : "#03C9D7"} />
+            <SlBasket
+              className="cursor-pointer"
+              size={20}
+              color={theme ? "#FF4A59" : "#03C9D7"}
+            />
+            <BsChatLeft
+              className="cursor-pointer"
+              size={20}
+              color={theme ? "#FF4A59" : "#03C9D7"}
+            />
             <IoMdNotificationsOutline
               className="cursor-pointer"
               size={20}
@@ -69,7 +79,11 @@ const App = () => {
               onClick={() => setTheme(!theme)}
               className="text-black dark:text-white"
             >
-              {theme ? <MdLightMode size={20} color="#FF4A59" /> : <MdOutlineDarkMode size={20} color="#03C9D7" />}
+              {theme ? (
+                <MdLightMode size={20} color="#FF4A59" />
+              ) : (
+                <MdOutlineDarkMode size={20} color="#03C9D7" />
+              )}
             </button>
           </div>
         </div>
@@ -91,6 +105,8 @@ const App = () => {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/area" element={<Line isOpen={isOpen} />} />
             <Route path="/line" element={<Bump isOpen={isOpen} />} />
+            <Route path="/editor" element={<Editor />} />
+            <Route path="/customers" element={<Customers />} />
           </Routes>
         </Main>
       </div>
