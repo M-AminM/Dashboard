@@ -9,7 +9,7 @@ interface Props {
 const Bar: React.FC<Props> = ({ isOpen }) => {
   const dynamicWidth: string = "calc(100% - " + "60px" + ")";
   return (
-    <section style={{ width: isOpen ? dynamicWidth : "" }}>
+    <section>
       <Box>
         <Box height="35vh">
           <AreaBump />

@@ -27,10 +27,10 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
         <div className="flex justify-between">
           <h1 className="font-bold pb-8 dark:text-white">Shoppy</h1>
           <span
-            className="pt-1.5 hidden md:block pr-4"
+            className="pt-1.5 hidden md:block pr-4 dark:color-white"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <MdOutlineCancel />
+            <MdOutlineCancel color={`${theme ? "white" : "black"}`} />
           </span>
         </div>
         <div className="flex flex-col h-screen overflow-auto">

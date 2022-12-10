@@ -16,6 +16,7 @@ import Calendar from "./components/Calendar/Calendar";
 import Line from "./components/Line/Line";
 import MdLightMode from "react-icons/md";
 import MdDarkMode from "react-icons/md";
+import Bump from "./components/Bump/Bump";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -89,6 +90,8 @@ const App = () => {
             <Route path="/bar" element={<Bar isOpen={isOpen} />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/area" element={<Line isOpen={isOpen} />} />
+            <Route path="/line" element={<Bump isOpen={isOpen} />} />
+
           </Routes>
         </Main>
       </div>
