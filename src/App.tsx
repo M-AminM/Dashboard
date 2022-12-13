@@ -13,12 +13,13 @@ import "./index.css";
 import Pie from "./components/Pie/Pie";
 import Bar from "./components/Bar/Bar";
 import Calendar from "./components/Calendar/Calendar";
-import Line from "./components/Line/Line";
+import Area from "./components/Area/Area";
 import { MdLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
-import Bump from "./components/Bump/Bump";
+import Bump from "./components/Line/Line";
 import Editor from "./components/Editor/Editor";
 import Customers from "./components/Customers/Customers";
+import Kanban from "./components/Kanban/Kanban";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -103,10 +104,11 @@ const App = () => {
             <Route path="/pie" element={<Pie height="75vh" />} />
             <Route path="/bar" element={<Bar isOpen={isOpen} />} />
             <Route path="/calendar" element={<Calendar />} />
-            <Route path="/area" element={<Line isOpen={isOpen} />} />
-            <Route path="/line" element={<Bump isOpen={isOpen} />} />
+            <Route path="/area" element={<Area isOpen={isOpen} height="85vh" />} />
+            <Route path="/line" element={<Bump isOpen={isOpen} height="85vh" />} />
             <Route path="/editor" element={<Editor />} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/kanban" element={<Kanban />} />
           </Routes>
         </Main>
       </div>

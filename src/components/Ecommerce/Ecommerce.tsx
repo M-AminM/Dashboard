@@ -6,11 +6,10 @@ import { earningData, data, lineOptions } from "../../data/dummy";
 // import { Line } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import { Button } from "@mui/material";
-import Line from "../../components/Line/Line";
+import Area from "../Area/Area";
 import "../../index.css";
 import Pie from "../Pie/Pie";
-import Bar from "../Bar/Bar";
-import Bump from "../Bump/Bump";
+import LineChart from "../Line/Line";
 
 interface Props {
   isOpen: boolean;
@@ -70,7 +69,7 @@ const Ecommerce: React.FC<Props> = ({ isOpen, theme }) => {
           </div>
         </div>
         <div className="bg-white col-span-1 col-span-3 dark:bg-darkMode">
-          <Line isOpen={false} />
+          <Area isOpen={false} height="35vh" />
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
@@ -141,7 +140,7 @@ const Ecommerce: React.FC<Props> = ({ isOpen, theme }) => {
           <Pie height="35vh" />
         </div>
         <div className="bg-white col-span-2 dark:bg-darkMode ">
-          <Bump isOpen={false} />
+          <LineChart isOpen={false} height="35vh" />
         </div>
         <div className="bg-white p-4 dark:bg-darkMode">
           <h2 className="font-semibold pb-4 dark:text-white">

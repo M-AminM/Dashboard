@@ -1,22 +1,22 @@
 import React from "react";
+import Line from "../Charts/Line";
 import { Box } from "@mui/material";
-import AreaBump from "../Charts/AreaBump";
 
 interface Props {
   isOpen: boolean;
+  height: string;
 }
 
-const Bar: React.FC<Props> = ({ isOpen }) => {
-  const dynamicWidth: string = "calc(100% - " + "60px" + ")";
+const LineChart: React.FC<Props> = ({ isOpen, height }) => {
+  const dynamicWidth: string = "calc(100vw - " + "220px" + ")";
+
   return (
-    <section>
-      <Box>
-        <Box height="35vh">
-          <AreaBump />
-        </Box>
+    <Box style={{ width: isOpen ? dynamicWidth : "" }}>
+      <Box height={height}>
+        <Line />
       </Box>
-    </section>
+    </Box>
   );
 };
 
-export default Bar;
+export default LineChart;

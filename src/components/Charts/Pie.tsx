@@ -1,44 +1,10 @@
-// install (please make sure versions match peerDependencies)
-// yarn add @nivo/core @nivo/pie
 import { ResponsivePie } from "@nivo/pie";
+import { PieChartData } from "../../data/dummy";
 
-const PieChart = () => {
-  const data = [
-    {
-      id: "elixir",
-      label: "elixir",
-      value: 418,
-      color: "hsl(178, 70%, 50%)",
-    },
-    {
-      id: "go",
-      label: "go",
-      value: 540,
-      color: "hsl(290, 70%, 50%)",
-    },
-    {
-      id: "javascript",
-      label: "javascript",
-      value: 108,
-      color: "hsl(215, 70%, 50%)",
-    },
-    {
-      id: "erlang",
-      label: "erlang",
-      value: 501,
-      color: "hsl(175, 70%, 50%)",
-    },
-    {
-      id: "php",
-      label: "php",
-      value: 412,
-      color: "hsl(261, 70%, 50%)",
-    },
-  ];
-
+const PieChart: React.FC = () => {
   return (
     <ResponsivePie
-      data={data}
+      data={PieChartData}
       margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
       innerRadius={0.5}
       padAngle={0.7}

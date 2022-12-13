@@ -1,21 +1,22 @@
 import React from "react";
 import { Box } from "@mui/material";
-import BarChart from "../Charts/Bar";
+import AreaBump from "../Charts/AreaBump";
 
 interface Props {
   isOpen: boolean;
+  height: string;
 }
 
-const Bar: React.FC<Props> = ({ isOpen }) => {
+const Area: React.FC<Props> = ({ isOpen, height }) => {
   const dynamicWidth: string = "calc(100vw - " + "220px" + ")";
 
   return (
     <Box style={{ width: isOpen ? dynamicWidth : "" }}>
-      <Box height="80vh">
-        <BarChart />
+      <Box height={height}>
+        <AreaBump />
       </Box>
     </Box>
   );
 };
 
-export default Bar;
+export default Area;
