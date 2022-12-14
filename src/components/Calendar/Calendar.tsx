@@ -5,8 +5,9 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 
-const Calendar = () => {
-  const [currentEvents, setCurrentEvents] = useState<any>([]);
+const Calendar: React.FC = () => {
+  const [currentEvents, setCurrentEvents] = useState<never[]>([]);
+
   const clickHandler = (e: any) => {
     if (
       window.confirm(
@@ -18,8 +19,6 @@ const Calendar = () => {
   };
 
   const handleDateClick = (e: any) => {
-    console.log(e);
-
     const title = prompt("Please enter a new title for your event ");
     const calendarApi = e.view.calendar;
     calendarApi.unselect();
@@ -39,10 +38,15 @@ const Calendar = () => {
     <section className="px-8 py-6 md:p-2">
       <div className="flex gap-6 md:flex-col">
         <div className="p-4 rounded-lg w-1/4 md:w-full md:p-0">
-          <h2 className="text-base font-semibold pb-2 pl-0.5 dark:text-white">Events</h2>
+          <h2 className="text-base font-semibold pb-2 pl-0.5 dark:text-white">
+            Events
+          </h2>
           <div>
             {currentEvents.map((event: any) => (
-              <div className="rounded-lg bg-midBlue mb-2 p-2 dark:bg-red dark:text-white font-semibold" key={event.id}>
+              <div
+                className="rounded-lg bg-midBlue mb-2 p-2 dark:bg-red dark:text-white font-semibold"
+                key={event.id}
+              >
                 <div className="flex gap-2 flex-col">
                   <h3 className="text-sm">{event.title}</h3>
                   <p className="text-sm">
@@ -59,7 +63,6 @@ const Calendar = () => {
         </div>
         <div className="w-full dark:text-white">
           <FullCalendar
-          
             height="75vh"
             plugins={[
               dayGridPlugin,
@@ -74,7 +77,7 @@ const Calendar = () => {
             dayMaxEvents={true}
             eventClick={clickHandler}
             select={handleDateClick}
-            eventsSet={(events) => setCurrentEvents(events)}
+            eventsSet={(events: any) => setCurrentEvents(events)}
             initialEvents={[
               {
                 id: "1",

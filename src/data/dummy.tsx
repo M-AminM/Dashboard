@@ -5,14 +5,12 @@ import {
   AiOutlineBarChart,
   AiOutlineStock,
 } from "react-icons/ai";
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart } from "react-icons/fi";
-import { BsKanban, BsBarChart, BsBoxSeam } from "react-icons/bs";
-import { BiColorFill } from "react-icons/bi";
+import { FiShoppingBag, FiPieChart, FiBarChart } from "react-icons/fi";
+import { BsKanban, BsBoxSeam } from "react-icons/bs";
 import { IoMdContacts } from "react-icons/io";
-import { RiContactsLine, RiStockLine } from "react-icons/ri";
+import { RiContactsLine } from "react-icons/ri";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
 import { HiOutlineRefresh } from "react-icons/hi";
-import { GiLouvrePyramid } from "react-icons/gi";
 
 export const links = [
   {

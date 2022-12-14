@@ -1,10 +1,6 @@
 import React from "react";
-import { GoPrimitiveDot } from "react-icons/go";
 import { BsCurrencyDollar } from "react-icons/bs";
-import Button1 from "../Button/Button";
-import { earningData, data, lineOptions } from "../../data/dummy";
-// import { Line } from "react-chartjs-2";
-import { Chart, ArcElement } from "chart.js";
+import { earningData } from "../../data/dummy";
 import { Button } from "@mui/material";
 import Area from "../Area/Area";
 import "../../index.css";
@@ -12,11 +8,10 @@ import Pie from "../Pie/Pie";
 import LineChart from "../Line/Line";
 
 interface Props {
-  isOpen: boolean;
   theme: boolean;
 }
 
-const Ecommerce: React.FC<Props> = ({ isOpen, theme }) => {
+const Ecommerce: React.FC<Props> = ({ theme }) => {
   return (
     <section className={`px-8 pt-2 pb-8 ${theme ? "dark" : ""}`}>
       <div className="grid grid-cols-5 gap-2 md:flex md:flex-col">

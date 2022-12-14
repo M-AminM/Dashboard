@@ -4,7 +4,6 @@ import { links } from "../../data/dummy";
 import { MdOutlineCancel } from "react-icons/md";
 import "../../index.css";
 
-
 interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,7 +20,10 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
 
   return (
-    <section className="overflow-auto md:absolute w-full " style={{zIndex: 20}}>
+    <section
+      className="overflow-auto md:absolute w-full "
+      style={{ zIndex: 20 }}
+    >
       <div className="ja" onClick={() => setIsOpen(!isOpen)}></div>
 
       <div className="py-4 pl-4 w-56 bg-white dark:bg-darkMode">
@@ -48,7 +50,9 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
                         backgroundColor:
                           isActive ||
                           (pathname === "/" && link.name === "ecommerce")
-                            ? !theme ? "#03C9D7" : "#FF4A59"
+                            ? !theme
+                              ? "#03C9D7"
+                              : "#FF4A59"
                             : "",
                       })}
                       className={({ isActive }) =>
@@ -58,7 +62,11 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
                           : normalLink
                       }
                     >
-                      <span className={`${index === 7 ? "mb-10" : ""} dark:text-white`}>
+                      <span
+                        className={`${
+                          index === 7 ? "mb-10" : ""
+                        } dark:text-white`}
+                      >
                         {link.icon}
                       </span>
                       <span className="dark:text-white">{link.name}</span>
