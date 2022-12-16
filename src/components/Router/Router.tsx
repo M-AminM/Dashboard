@@ -28,7 +28,7 @@ const Router: React.FC<Props> = ({ theme, isOpen }) => {
       <Route path="/area" element={<Area isOpen={isOpen} height="85vh" />} />
       <Route path="/line" element={<Bump isOpen={isOpen} height="85vh" />} />
       <Route path="/customers" element={<Customers />} />
-      <Route path="/kanban" element={<Kanban />} />
+      <Route path="/kanban" element={<Kanban theme={theme} />} />
     </Routes>
   );
 };
