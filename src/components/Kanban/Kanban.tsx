@@ -25,26 +25,31 @@ const Kanban: React.FC<Props> = ({ theme }) => {
     e.preventDefault();
     setState("");
     let id = 1;
-    setStates([...states, { id: id++, name: state }]);
+    setStates([...states, { id: states.length + 1, name: state }]);
   };
+
+  // console.log(states);
 
   const deleteHandler = (data: any) => {
     console.log(data);
-    setStates(states.filter((state: any) => state.name !== data));
+    setStates(states.filter((state: any) => state.id !== data));
   };
 
   const changeHandler = (data: any) => {
-    const index = states.map((e: any) => e.name).indexOf(data);
+    const index = states.map((e: any) => e.id).indexOf(data);
     states[index].name = newValue;
     setStates(states);
     setEdit(false);
+    setNewValue("");
   };
 
   const handler = (data: any) => {
     setEdit(!edit);
-    const inde = states.map((e: any) => e.name).indexOf(data);
-    setIndexs(inde);
+    const inde = states.map((e: any) => e.id).indexOf(data);
     console.log(inde);
+
+    setIndexs(inde);
+    // console.log(inde);
   };
 
   return (
@@ -59,7 +64,9 @@ const Kanban: React.FC<Props> = ({ theme }) => {
           value={state}
         />
 
-        <button className="p-2 bg-red rounded-r-lg">submit</button>
+        <button className="p-2 bg-midBlue text-white rounded-r-lg dark:bg-red dark:text-black font-semibold">
+          submit
+        </button>
       </form>
       <TableContainer component={Paper}>
         <Table
@@ -91,7 +98,7 @@ const Kanban: React.FC<Props> = ({ theme }) => {
                       <span
                         className="flex justify-center items-center cursor-pointer"
                         data-id={data.name}
-                        onClick={() => deleteHandler(data.name)}
+                        onClick={() => deleteHandler(data.id)}
                       >
                         <AiOutlineDelete
                           color={theme ? "#FF4A59" : "#03C9D7"}
@@ -101,7 +108,7 @@ const Kanban: React.FC<Props> = ({ theme }) => {
                       {!edit && (
                         <span
                           className="flex justify-center items-center cursor-pointer"
-                          onClick={() => handler(data.name)}
+                          onClick={() => handler(data.id)}
                         >
                           <AiFillEdit
                             color={theme ? "#FF4A59" : "#03C9D7"}
@@ -109,10 +116,10 @@ const Kanban: React.FC<Props> = ({ theme }) => {
                           />
                         </span>
                       )}
-                      {edit && (
+                      {edit && index === indexs && (
                         <span
                           className="flex justify-center items-center cursor-pointer"
-                          onClick={() => changeHandler(data.name)}
+                          onClick={() => changeHandler(data.id)}
                         >
                           <IoMdDoneAll
                             color={theme ? "#FF4A59" : "#03C9D7"}
@@ -125,7 +132,7 @@ const Kanban: React.FC<Props> = ({ theme }) => {
                   <TableCell className="dark:text-white" align="right">
                     {edit && index === indexs ? (
                       <input
-                        className="bg-red"
+                        className="bg-midBlue p-1 rounded-lg border-none outline-0 dark:bg-red"
                         onChange={(e) => setNewValue(e.target.value)}
                       />
                     ) : (
