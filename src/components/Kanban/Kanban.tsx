@@ -9,6 +9,7 @@ import Paper from "@mui/material/Paper";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
 import { IoMdDoneAll } from "react-icons/io";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 interface Props {
   theme: boolean;
@@ -52,6 +53,16 @@ const Kanban: React.FC<Props> = ({ theme }) => {
     // console.log(inde);
   };
 
+  const handleOnDragEnd = (result: any) => {
+    if (!result.destination) return;
+
+    const items = Array.from(states);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setStates(items);
+  };
+
   return (
     <section className="px-8 pt-2 pb-8 md:p-2 ">
       <form
@@ -69,82 +80,109 @@ const Kanban: React.FC<Props> = ({ theme }) => {
         </button>
       </form>
       <TableContainer component={Paper}>
-        <Table
-          className="dark:bg-darkMode"
-          sx={{ minWidth: 650 }}
-          aria-label="simple table"
-        >
-          <TableHead>
-            <TableRow>
-              <TableCell className="dark:text-white">Name</TableCell>
-              <TableCell className="dark:text-white" align="right">
-                Doing
-              </TableCell>
-              <TableCell className="dark:text-white" align="right">
-                Is Done
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {states.map((data: any, index: number) => {
-              return (
-                <TableRow
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  key={index}
-                >
-                  <TableCell component="th" scope="row">
-                    <div className="flex gap-2">
-                      <span className="dark:text-white">Amin</span>
-                      <span
-                        className="flex justify-center items-center cursor-pointer"
-                        data-id={data.name}
-                        onClick={() => deleteHandler(data.id)}
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="characters">
+            {(provided) => (
+              <Table
+                className="dark:bg-darkMode"
+                sx={{ minWidth: 650 }}
+                aria-label="simple table"
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                <TableHead>
+                  <TableRow>
+                    <TableCell className="dark:text-white">Name</TableCell>
+                    <TableCell className="dark:text-white" align="right">
+                      Doing
+                    </TableCell>
+                    <TableCell className="dark:text-white" align="right">
+                      Is Done
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {states.map((data: any, index: number) => {
+                    return (
+                      <Draggable
+                        key={data.id}
+                        draggableId={data.id.toString()}
+                        index={index}
                       >
-                        <AiOutlineDelete
-                          color={theme ? "#FF4A59" : "#03C9D7"}
-                          size={20}
-                        />
-                      </span>
-                      {!edit && (
-                        <span
-                          className="flex justify-center items-center cursor-pointer"
-                          onClick={() => handler(data.id)}
-                        >
-                          <AiFillEdit
-                            color={theme ? "#FF4A59" : "#03C9D7"}
-                            size={20}
-                          />
-                        </span>
-                      )}
-                      {edit && index === indexs && (
-                        <span
-                          className="flex justify-center items-center cursor-pointer"
-                          onClick={() => changeHandler(data.id)}
-                        >
-                          <IoMdDoneAll
-                            color={theme ? "#FF4A59" : "#03C9D7"}
-                            size={20}
-                          />
-                        </span>
-                      )}
-                    </div>
-                  </TableCell>
-                  <TableCell className="dark:text-white" align="right">
-                    {edit && index === indexs ? (
-                      <input
-                        className="bg-midBlue p-1 rounded-lg border-none outline-0 dark:bg-red"
-                        onChange={(e) => setNewValue(e.target.value)}
-                      />
-                    ) : (
-                      data.name
-                    )}
-                  </TableCell>
-                  <TableCell align="right"></TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
+                        {(provided) => (
+                          <TableRow
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                            key={index}
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                          >
+                            <TableCell component="th" scope="row">
+                              <div className="flex gap-2">
+                                <span className="dark:text-white">
+                                  {data.id}
+                                </span>
+                                <span
+                                  className="flex justify-center items-center cursor-pointer"
+                                  data-id={data.name}
+                                  onClick={() => deleteHandler(data.id)}
+                                >
+                                  <AiOutlineDelete
+                                    color={theme ? "#FF4A59" : "#03C9D7"}
+                                    size={20}
+                                  />
+                                </span>
+                                {!edit && (
+                                  <span
+                                    className="flex justify-center items-center cursor-pointer"
+                                    onClick={() => handler(data.id)}
+                                  >
+                                    <AiFillEdit
+                                      color={theme ? "#FF4A59" : "#03C9D7"}
+                                      size={20}
+                                    />
+                                  </span>
+                                )}
+                                {edit && index === indexs && (
+                                  <span
+                                    className="flex justify-center items-center cursor-pointer"
+                                    onClick={() => changeHandler(data.id)}
+                                  >
+                                    <IoMdDoneAll
+                                      color={theme ? "#FF4A59" : "#03C9D7"}
+                                      size={20}
+                                    />
+                                  </span>
+                                )}
+                              </div>
+                            </TableCell>
+                            <TableCell
+                              className="dark:text-white"
+                              align="right"
+                            >
+                              {edit && index === indexs ? (
+                                <input
+                                  className="bg-midBlue p-1 rounded-lg border-none outline-0 dark:bg-red"
+                                  onChange={(e) => setNewValue(e.target.value)}
+                                />
+                              ) : (
+                                data.name
+                              )}
+                            </TableCell>
+                            <TableCell align="right"></TableCell>
+                          </TableRow>
+                        )}
+                      </Draggable>
+                    );
+                  })}
+                  {provided.placeholder}
+                </TableBody>
+              </Table>
+            )}
+          </Droppable>
+        </DragDropContext>
       </TableContainer>
     </section>
   );
